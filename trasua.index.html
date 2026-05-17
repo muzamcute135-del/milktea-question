@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trà sữa question</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#ffe6f0;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    overflow:hidden;
+}
+
+h1{
+    font-size:30px;
+    margin-bottom:30px;
+    padding:0 20px;
+    color:#5a2a2a;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    border-radius:18px;
+    padding:15px 28px;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+#yes{
+    background:#ff6fae;
+    color:white;
+    box-shadow:0 8px 20px rgba(255, 111, 174, 0.35);
+}
+
+#no{
+    background:white;
+    color:#5a2a2a;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Bạn sẽ mua trà sữa cho mình chứ? 🧋</h1>
+
+<div class="buttons">
+    <button id="yes">Có chứ 🧋❤️</button>
+    <button id="no">Không đâu 😭</button>
+</div>
+
+<script>
+let size = 1;
+
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+
+noBtn.onclick = () => {
+    size += 0.4;
+    yesBtn.style.transform = `scale(${size})`;
+
+    if(size >= 5){
+        noBtn.style.display = "none";
+    }
+};
+
+yesBtn.onclick = () => {
+    document.body.innerHTML = `
+        <div style="text-align:center; padding:20px;">
+            <h1 style="color:#ff4f8b; font-size:34px;">
+                Biết ngay màaa 🧋❤️
+            </h1>
+            <p style="font-size:22px; color:#5a2a2a;">
+                Chốt đơn trà sữa nha, không được nuốt lời 😌
+            </p>
+        </div>
+    `;
+};
+</script>
+
+</body>
+</html>
